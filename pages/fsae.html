@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Hawaii Formula SAE</title>
+</head>
+<body>
+        <header class="site-header">
+        <a href="/" class="logo">Erik Anderson</a>
+        <nav aria-label="Main navigation">
+            <a href="/index.html">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+ <main>
+
+    <article class="project">
+
+        <header class="project-header">
+        <p class="eyebrow">Mechanical Engineering / Vehicle Design</p>
+        <h1>University of Hawaii Formula SAE</h1>
+        <p class="subtitle">
+            Chassis design, structural analysis, and composite bodywork
+        </p>
+    </header>
+    <section>
+    <h2>Introduction</h2>
+    <p>I did my Senior Design Project at UH as the Chassis lead for the Formula SAE (FSAE) EV team for Fall 2025 and Spring 2026. FSAE is one of the most widespread college engineering competitions.
+        Each year, participants develop a small electric race car from the ground up, applying engineering decision making and analysis.
+        It is known for its rigorous technical involvement and interdisciplinary challenges. Every step of the project from concept to competition requires student involvement including securing sponsorships, supplier contact, and often in-house manufacturing.
+    </p>
+    </section>
+
+    <section>
+    <h2>My Role</h2>
+    <p>After inspecting the current state of the project, we concluded that the previous frame design was not reusable. After years of retrofits from rule changes and attempts to correct design flaws, it had accumulated severe excess weight.
+        There were multiple tube intersections with extremely acute angles, and some nodes connecting over 10 members. Keeping the old frame also meant severely limiting suspension configuration options. A full redesign of the frame to address design flaws
+        in the previous model became one of the focal points of our season. I noticed this challenge as an excellent experience opportunity so I decided to lead the Chassis subsystem.
+    </p>
+    </section>
+
+    <section>
+    <h2>Frame Redesign</h2>
+    <p>I approached the redesign using principles discussed in the Senior Design Project lectures from Dr. Trimble and Dr. Sorensen. I defined the problem, created requirements and constraints, researched existing solutions, developed prototypes, ran trade studies and FMEA,
+         and converged on a suitable solution. I used SolidWorks to devise a rough concept by late September. I quickly realized how much of the design is constrained by the FSAE rulebook, so I began iterations by checking rules and adjusting accordingly. For specific
+          sections, I researched other team designs and compared them to our requirements. Suspension mounts and component packaging were other crucial drivers of the design. I worked in tandem with all other subsystems to develop 3D models of their parts
+          and make space in the frame to place them. The suspension mounting points are especially important on any frame because they connect the frame to dynamic loads from the tires.
+    </p>
+    <p>A high performance chassis optimizes stiffness to mass, especially in torsion. We read a paper that discussed modelling the suspension and chassis as three series torsional springs. The key takeaway is that in order for the suspension dynamics to be predictable,
+        the chassis should have negligent contribution to torsional deflection. In other words, the chassis should be many times stiffer than the suspension in torsion. We calculated that the frame must be stiffer than 900 Nm/deg. This value gave my chassis design a clear goal:
+        reach the threshold while minimizing mass. I read some articles on the FSEA Design Judges website that discussed stiffness optimization. I ran static FEA in SolidWorks Simulation to get an idea of the current stiffness which appeared to be approximately 1000 [Nm/deg].
+        However, after researching other team numbers, most teams were stiffer. I documented stiffness analyses with various proposed changes such as adding additional braces and doubling triangulation to achieve shorter load paths. I found that doubling the triangulation of
+        side impact structure achieved 47% stiffness increase and yielded only a 1.2% mass increase. I considered this a worthwhile tradeoff and implemented it into the final design.
+    </p>
+    <figure>
+        <img src="../images/chassis-cad.png"
+            alt = "SolidWorks model of the redesigned FSAE chassis">
+            <figcaption>
+                Final chassis design in SolidWorks
+            </figcaption>
+    </figure>
+    </section>
+
+    <section>
+    <h2>Bodywork</h2>
+    <p>After the frame design was finalized in December, we decided to outsource manufacturing to a local welding company. During this process, I began design of the bodywork. I ran through a similar process, researching requirements and constraints and exploring existing
+        research and solutions. Because FSAE courses are often low-speed autocross, airflow is low and aero kits may offer slim performance gains. As a first year team, I opted for no aero and instead optimized for mass minimization. I created a nose cone and hood design in SolidWorks, but planned on making the side skin out of
+        a super lightweight aircraft fabric. Taking inspiration from small airplanes, this choice can reduce weight as much as 50% and offer a simpler manufacturing process. Carbon fiber was used for the nose cone and hood because they must have some self-structure instead of just wrapping around the tubes.
+        The carbon fiber parts were created using interlocking multipeice 3D printed molds. Sections and joints were designed in SolidWorks and then assembled using wooden dowels and epoxy. On the nose cone mold, layer lines were faired with acrylic modeling paste and then finished with automotive clear coat.
+         Sufficient smoothness for release is critical for a composite part mold. On the hood mold, a plastic trash bag was stretched and taped around the outside of the mold, creating an effective mold release surface. The parts used a two layer fine weave carbon fiber layup with epoxy.
+         The resulting parts were approximately 300 g.
+    </p>
+    </section>
+
+    <section>
+    <h2>Manufacturing</h2>
+    <p>After facing funding delays and long turnarounds, we received our frame in April. These delays put us behind schedule and full
+         efforts were directed towards integrating subsystems as soon as possible. Unfortunately we discovered that the dimensions were severely out of tolerance, with deviations as large as 30 mm in certain places. A few sections were no longer rules compliant
+          because of this failure, so we made the tough decision to cut apart and modify the part to meet rules requirements. After welding it back together in house with tubes from the old frame, we began integration. The dimensional errors made this much harder as well
+           because no mounts lined up properly as shown in cad. A complete overhaul was needed for the workflow. Using a 3D scanner, we created custom shaped mounts and grinded them to fit.
+    </p>
+    <p>
+        After just three weeks of work, we achieved a rolling vehicle. By May, we integrated the drivetrain and conducted our first drive test. Having the chance to drive such a car was a dream come true for me, especially after the adversity we had faced.
+         Every subsystem had come together into something that was really starting to look like a race car.
+    </p>
+    </section>
+
+    <section>
+    <h2>Crash</h2>
+    <p>Unfortunately, while I was travelling after the semester ended, the car was crashed during testing. The car was damaged enough that we would not be able to go to the competition. To get that far was disappointing for everyone but it did provide valuable information.
+         The frame was minimally damaged with only a few dented tubes due to strikes. No buckling or cracking occured. While catastrophic for our season, it validated structural integrity in a way that would not be possible otherwise.
+
+    </p>
+    </section>
+    </article>
+</main>
+</body>
+</html>
