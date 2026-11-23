@@ -1,6 +1,6 @@
 
 /* =================================
-   GLOBAL STYLES
+   GLOBAL
 ================================= */
 
 * {
@@ -8,12 +8,11 @@
 }
 
 :root {
-    --background: #fafafa;
-    --surface: #ffffff;
+    --background: #ffffff;
     --text: #242a33;
     --muted: #687383;
     --accent: #245b91;
-    --border: #e3e6eb;
+    --border: #edf0f3;
 }
 
 html {
@@ -35,20 +34,26 @@ body {
 ================================= */
 
 .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 20px 40px;
+    padding: 22px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 10;
+    background: transparent;
+}
 
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
+.site-header a {
+    color: var(--text);
+    text-decoration: none;
 }
 
 .site-header .logo {
     font-size: 1.1rem;
     font-weight: 700;
-    letter-spacing: -0.4px;
 }
 
 .site-header nav {
@@ -56,41 +61,45 @@ body {
     gap: 32px;
 }
 
-.site-header a {
-    color: var(--text);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
 .site-header nav a {
     color: var(--muted);
     font-size: 0.9rem;
 }
 
-.site-header a:hover {
-    color: var(--accent);
-}
-
 
 /* =================================
-   PROJECT HEADER
+   HERO
 ================================= */
 
-.project {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 0 30px;
+.project-hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 130px 10% 90px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.45),
+            rgba(0,0,0,0.05)
+        ),
+        url("../images/fsae-hero.jpg");
+
+    background-size: cover;
+    background-position: center;
 }
 
-.project-header {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 100px 30px 65px;
-    border-bottom: 1px solid var(--border);
+.project-hero h1,
+.project-hero .subtitle,
+.project-hero .eyebrow {
+    color: white;
+}
+
+.hero-content {
+    max-width: 900px;
 }
 
 .eyebrow {
-    margin-bottom: 15px;
     color: var(--accent);
     font-size: 0.8rem;
     font-weight: 700;
@@ -98,126 +107,158 @@ body {
     text-transform: uppercase;
 }
 
-.project-header h1 {
+.project-hero h1 {
     max-width: 850px;
-    margin: 0;
-    font-size: clamp(2.5rem, 5vw, 4.2rem);
-    line-height: 1.12;
-    letter-spacing: -2px;
-    font-weight: 750;
+    margin: 20px 0;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.08;
+    letter-spacing: -2.5px;
 }
 
 .subtitle {
-    margin-top: 22px;
+    max-width: 600px;
     color: var(--muted);
-    font-size: 1.15rem;
-    line-height: 1.5;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    line-height: 1.6;
 }
 
 
 /* =================================
-   SECTIONS
+   PROJECT CONTENT
 ================================= */
 
+.project {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 clamp(25px, 6vw, 80px);
+}
+
 .project section {
-    margin: 65px 0;
+    margin: 110px 0;
 }
 
 .project h2 {
-    margin-bottom: 22px;
-    font-size: 2rem;
-    line-height: 1.25;
-    letter-spacing: -0.8px;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    margin-bottom: 28px;
 }
 
 .project p {
-    margin: 0 0 22px;
-    color: #414956;
-}
-
-.project section h2::after {
-    content: "";
-    display: block;
-    width: 42px;
-    height: 3px;
-    margin-top: 15px;
-    background: var(--accent);
+    max-width: 780px;
+    font-size: 1.08rem;
+    line-height: 1.9;
+    margin-bottom: 28px;
 }
 
 
 /* =================================
-   IMAGES AND FIGURES
+   FULL WIDTH IMAGE SECTIONS
+================================= */
+
+.image-break {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    margin: 80px 0;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    position: relative;
+    isolation: isolate;
+}
+
+.image-break::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.05)
+    );
+    z-index: -1;
+}
+
+.image-break-content {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px;
+    color: white;
+}
+
+.image-break h2,
+.image-break .eyebrow {
+    color: white;
+}
+
+.image-chassis {
+    background-image: url("../images/fsae3.png");
+}
+
+
+/* =================================
+   IMAGES
 ================================= */
 
 .project figure {
-    margin: 40px 0;
+    margin: 45px 0;
 }
 
 .project figure img {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 .project figcaption {
     margin-top: 12px;
     color: var(--muted);
     font-size: 0.85rem;
-    line-height: 1.5;
-}
-
-
-/* =================================
-   LINKS
-================================= */
-
-.project a {
-    color: var(--accent);
-    text-decoration: none;
-}
-
-.project a:hover {
-    text-decoration: underline;
 }
 
 
 /* =================================
    MOBILE
 ================================= */
-
-@media (max-width: 650px) {
+@media (max-width: 700px) {
 
     .site-header {
-        padding: 18px 22px;
+        padding: 18px 6%;
     }
 
     .site-header nav {
-        gap: 16px;
+        gap: 18px;
     }
 
-    .site-header nav a {
-        font-size: 0.8rem;
+    .project-hero {
+        min-height: 85vh;
+        padding: 120px 7% 70px;
+        background-position: 60% center;
     }
 
-    .project-header {
-        padding: 65px 22px 45px;
-    }
-
-    .project-header h1 {
+    .project-hero h1 {
         letter-spacing: -1px;
     }
 
     .project {
-        padding: 0 22px;
+        padding: 0 23px;
     }
 
     .project section {
-        margin: 45px 0;
+        margin: 60px 0;
     }
 
-    .project h2 {
-        font-size: 1.7rem;
+    .image-break {
+        min-height: 500px;
+        padding: 40px 5%;
     }
 
+    .image-break-content {
+        padding: 20px;
+    }
 }
