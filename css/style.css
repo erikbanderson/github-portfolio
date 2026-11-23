@@ -34,7 +34,7 @@ body {
 ================================= */
 
 .site-header {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -108,6 +108,61 @@ body {
 }
 
 .project-hero h1 {
+    max-width: 850px;
+    margin: 20px 0;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.08;
+    letter-spacing: -2.5px;
+}
+
+.subtitle {
+    max-width: 600px;
+    color: var(--muted);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    line-height: 1.6;
+}
+
+/* =================================
+   ABOUT HERO
+================================= */
+
+.about-hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 130px 10% 90px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.45),
+            rgba(0,0,0,0.05)
+        ),
+        url("../images/about-hero.png");
+
+    background-size: cover;
+    background-position: center 30%;
+}
+
+.about-hero h1,
+.about-hero .subtitle,
+.about-hero .eyebrow {
+    color: white;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.about-hero h1 {
     max-width: 850px;
     margin: 20px 0;
     font-size: clamp(3rem, 6vw, 5.5rem);
@@ -197,6 +252,11 @@ body {
 
 .image-chassis {
     background-image: url("../images/fsae3.png");
+}
+
+.image-sailing {
+    background-image: url("../images/icsanatls.png");
+
 }
 
 
